@@ -1,0 +1,34 @@
+---
+- name: test the win_user_info module
+  hosts: all
+  gather_facts: no
+
+  roles:
+    - win_user_info
+
+  tasks:
+    - name: Gather facts about all local Windows user accounts
+      win_user_info:
+      register: all_users_info
+
+    - name: Displays the facts
+      debug:
+        var: all_users_info
+
+    - name: Gather facts about local Windows administrator user account
+      win_user_info:
+        sid: "*-500"
+      register: admin_user_info
+
+    - name: Displays the facts
+      debug:
+        var: admin_user_info
+
+    - name: Gather facts about local Windows user account whose name begin with admi
+      win_user_info:
+        name: "admi*"
+      register: admi_user_info
+
+    - name: Displays the facts
+      debug:
+        var: admi_user_info.local_user_info

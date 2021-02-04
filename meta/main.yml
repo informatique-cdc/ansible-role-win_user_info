@@ -1,0 +1,21 @@
+galaxy_info:
+  role_name: win_user_info
+  author: Stéphane Bilqué
+  description: Gather facts about local Windows user accounts
+  company: Informatique CDC
+  license: Apache
+
+  min_ansible_version: 2.8
+  platforms:
+    - name: windows
+      versions:
+        - 2016
+        - 2019
+
+  galaxy_tags:
+    - user
+    - facts
+    - info
+    - local
+
+dependencies: []

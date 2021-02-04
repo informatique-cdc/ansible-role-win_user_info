@@ -1,0 +1,4 @@
+/.vscode
+/.vscode/*
+Ansible.*.psm1
+Ansible.*.cs
